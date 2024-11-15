@@ -21,6 +21,8 @@ const staticModels: ModelInfo[] = [
   { name: 'cohere/command', label: 'Cohere Command (OpenRouter)', provider: 'OpenRouter' },
   { name: 'gemini-1.5-flash-latest', label: 'Gemini 1.5 Flash', provider: 'Google' },
   { name: 'gemini-1.5-pro-latest', label: 'Gemini 1.5 Pro', provider: 'Google' },
+  { name: 'nvidia_nim/llama-3.1-nemotron-70b-instruct', label: 'nvidia/llama-3.1-nemotron-70b-instruct', provider: 'Nvidia' },
+  { name: 'Qwen/Qwen2.5-Coder-32B-Instruct', label: 'Qwen/Qwen2.5-Coder-32B-Instruct', provider: 'Qwen' },
   { name: 'llama-3.1-70b-versatile', label: 'Llama 3.1 70b (Groq)', provider: 'Groq' },
   { name: 'llama-3.1-8b-instant', label: 'Llama 3.1 8b (Groq)', provider: 'Groq' },
   { name: 'llama-3.2-11b-vision-preview', label: 'Llama 3.2 11b (Groq)', provider: 'Groq' },

@@ -57,6 +57,24 @@ export function getGroqModel(apiKey: string, model: string) {
   return openai(model);
 }
 
+export function getNvidiaModel(apiKey: string, model: string) {
+  const openai = createOpenAI({
+    baseURL: 'https://api.nvidia.com/openai/v1',
+    apiKey,
+  });
+
+  return openai(model);
+}
+
+export function getHyperbolicModel(apiKey: string, model: string) {
+  const openai = createOpenAI({
+    baseURL: 'https://api.hyperbolic.xyz/v1',
+    apiKey,
+  });
+
+  return openai(model);
+}
+
 export function getOllamaModel(baseURL: string, model: string) {
   let Ollama = ollama(model, {
     numCtx: 32768,
@@ -111,6 +129,8 @@ export function getModel(provider: string, model: string, env: Env, apiKeys?: Re
       return getOpenAIModel(apiKey, model);
     case 'Groq':
       return getGroqModel(apiKey, model);
+    case 'Nvidia':
+      return getNvidiaModel(apiKey, model);
     case 'OpenRouter':
       return getOpenRouterModel(apiKey, model);
     case 'Google':
