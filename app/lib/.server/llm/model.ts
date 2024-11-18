@@ -9,6 +9,8 @@ import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import { mistral } from '@ai-sdk/mistral';
 import { createMistral } from '@ai-sdk/mistral';
 
+
+
 export function getAnthropicModel(apiKey: string, model: string) {
   const anthropic = createAnthropic({
     apiKey,
@@ -16,6 +18,16 @@ export function getAnthropicModel(apiKey: string, model: string) {
 
   return anthropic(model);
 }
+
+export function getGithubModel(apiKey: string, model: string){
+  const openai = createOpenAI({
+    baseURL: 'https://models.inference.ai.azure.com',
+    apiKey,
+  });
+
+  return openai(model);
+}
+
 export function getOpenAILikeModel(baseURL:string,apiKey: string, model: string) {
   const openai = createOpenAI({
     baseURL,
@@ -125,6 +137,8 @@ export function getModel(provider: string, model: string, env: Env, apiKeys?: Re
   switch (provider) {
     case 'Anthropic':
       return getAnthropicModel(apiKey, model);
+    case 'Github':
+      return getGithubModel(apiKey, model);
     case 'OpenAI':
       return getOpenAIModel(apiKey, model);
     case 'Groq':
@@ -133,6 +147,8 @@ export function getModel(provider: string, model: string, env: Env, apiKeys?: Re
       return getNvidiaModel(apiKey, model);
     case 'OpenRouter':
       return getOpenRouterModel(apiKey, model);
+     case 'Hyperbolic':
+      return getHyperbolicModel(apiKey, model);
     case 'Google':
       return getGoogleModel(apiKey, model);
     case 'OpenAILike':

@@ -17,6 +17,8 @@ export function getAPIKey(cloudflareEnv: Env, provider: string, userApiKeys?: Re
   switch (provider) {
     case 'Anthropic':
       return env.ANTHROPIC_API_KEY || cloudflareEnv.ANTHROPIC_API_KEY;
+    case 'Github':
+      return env.GITHUB_TOKEN || cloudflareEnv.GITHUB_TOKEN;
     case 'OpenAI':
       return env.OPENAI_API_KEY || cloudflareEnv.OPENAI_API_KEY;
     case 'Google':
@@ -25,6 +27,8 @@ export function getAPIKey(cloudflareEnv: Env, provider: string, userApiKeys?: Re
       return env.GROQ_API_KEY || cloudflareEnv.GROQ_API_KEY;
     case 'OpenRouter':
       return env.OPEN_ROUTER_API_KEY || cloudflareEnv.OPEN_ROUTER_API_KEY;
+    case 'hyperbolic':
+      return env.HYPERBOLIC_API_KEY || cloudflareEnv.OPEN_HYPERBOLIC_API_KEY;
     case 'Deepseek':
       return env.DEEPSEEK_API_KEY || cloudflareEnv.DEEPSEEK_API_KEY
     case 'Mistral':
