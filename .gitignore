@@ -22,13 +22,25 @@ dist-ssr
 *.sln
 *.sw?
 
+/.history
 /.cache
 /build
 .env.local
 .env
+.dev.vars
 *.vars
 .wrangler
 _worker.bundle
 
 Modelfile
 modelfiles
+
+# docs ignore
+site
+
+# commit file ignore
+app/commit.json
+changelogUI.md
+docs/instructions/Roadmap.md
+.cursorrules
+*.md
